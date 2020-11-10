@@ -1,0 +1,70 @@
+.formRow {
+  margin-bottom: 10px;
+}
+
+.lastName {
+  margin-left: 5px;
+}
+
+.errorInfo {
+  color: #ff0000;
+  font-size: 10px;
+}
+
+.fnameError {
+  width: 50%;
+  align-items: flex-start;
+}
+
+.lnameError {
+  width: 50%;
+  align-items: flex-end;
+}
+
+.nameErrors {
+  display: flex;
+  justify-content: space-evenly;
+  width: 22rem;
+  margin-left: 3rem;
+}
+
+/* chip */
+
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: 25px;
+  border-radius: 25px;
+  color: #343336;
+  background-color: #6095c95c;
+  margin: 10px 3px;
+}
+
+.listInterest {
+  margin-left: 3rem;
+}
+
+.closebtn {
+  padding-left: 10px;
+  color: #888;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: #000;
+}
+
+label {
+  width: 200px;
+  margin: 10px;
+}
+
+.cmmonField {
+  border: 2px solid #59758F;
+  margin: 10px 5px 0px 100px;
+  width: 170px;
+}

@@ -1,0 +1,110 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.registerButton {
+  background-color: #6095c9;
+  color: #c0e3f8;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #627b95;
+  border-radius: 5px;
+}
+
+.landingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/** Registeration form **/
+.registerPageRoot {
+  height: 100vh;
+  width: 100%;
+  background-color: beige;
+  display: inline-flex;
+  padding: 5%;
+}
+
+.rootLeft {
+  width: 130px;
+  border-right: 1px solid #6095c9;
+  padding-right: 10px;
+}
+
+.rootRight {
+  padding-left: 40px;
+  width: calc(100% - 130px);
+}
+
+input[type="file"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  /* width: 100%; */
+}
+
+.uploadDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.uploadLabels {
+  position: relative;
+  background-color: #6095c9;
+  height: 140px;
+  width: 120px;
+  border: 1px solid #4a7190;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.formLabel {
+  font-size: 20px;
+  margin: 12px 30px 40px 0px;
+  font-weight: lighter;
+  font-family: sans-serif;
+  padding-bottom: 12px;
+}
+
+.formNameLabel {
+  font-size: 12px;
+  margin: 30px 30px 0px 0px;
+  font-weight: lighter;
+  font-family: sans-serif;
+}
+
+.formAgeLabel {
+  font-size: 12px;
+  margin: 12px 30px 40px 0px;
+  font-weight: lighter;
+  font-family: sans-serif;
+  padding-bottom: 12px;
+}
+
+.commonTextBox {
+  border: 2px solid #59758f;
+  margin: 0px 10px 5px 0px;
+}
+
+.profileDetails {
+  width: 100%;
+  display: flex;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+  appearance: none;
+  border: 1px solid #59758f;
+  /* font-size: 1rem;
+  padding: 0.5rem;
+  min-width: 20rem; */
+}
