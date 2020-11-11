@@ -1,6 +1,8 @@
 import React from "react";
-import { Control, Form, Errors, combineForms } from "react-redux-form";
+import { Control, Form, Errors } from "react-redux-form";
 import { countryList, stateList } from "./config";
+import firebase from "firebase";
+
 import "./register.css";
 
 const required = val => val && val.length;
@@ -16,12 +18,25 @@ class RegisterForm extends React.Component {
       selectedCountry: "",
       address: "",
       interestList: [],
-      interest: ""
+      interest: "",
+      age: 0
     };
   }
-  handleSubmit = data => {
-    alert(data);
+
+  componentDidMount() {}
+  handleSubmit = values => {
+    const { age } = this.state;
+    const { history } = this.props;
+    let data = { ...values, age };
+    console.table(data);
+
+    firestore.collection("users").add({
+      firstName: firstName,
+      age: age
+    });
+    history.push("/view-user");
   };
+
   handleInterestField = e => {
     this.setState({ interest: e.target.value });
   };
@@ -48,7 +63,7 @@ class RegisterForm extends React.Component {
   };
 
   render() {
-    const { interestList, selectedCountry, address } = this.state;
+    const { interestList, selectedCountry, address, age } = this.state;
     return (
       <div className="registerPageRoot">
         <div className="rootLeft">
@@ -65,7 +80,7 @@ class RegisterForm extends React.Component {
               <div className="field formRow">
                 <label>Name:</label>
                 <Control.text
-                  className="cmmonField"
+                  className="cmmonField fname"
                   placeholder="First Name"
                   model=".firstName"
                   validators={{
@@ -108,8 +123,21 @@ class RegisterForm extends React.Component {
                 </div>
               </div>
 
-              <div className="field">
+              <div className="field age">
                 <label>Age:</label>
+                <div class="slidecontainer">
+                  <input
+                    class="slider"
+                    id="myRange"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={age}
+                    onChange={e => this.onChangeHandler(e, "age")}
+                    step="1"
+                  />
+                  {age}
+                </div>
               </div>
 
               <div className="field">
@@ -191,7 +219,7 @@ class RegisterForm extends React.Component {
                 <label>Address</label>
                 <Control.select
                   className="cmmonField"
-                  model=".favoriteColor"
+                  model=".contactAddress"
                   onChange={e => {
                     this.onChangeHandler(e, "address");
                   }}
@@ -247,16 +275,14 @@ class RegisterForm extends React.Component {
               </div>
 
               <div className="field">
-                <label>
-                  <Control.checkbox model=".employed" />
+                <label id="subscribeKey">
+                  <Control.checkbox model=".subscribe" />
                   Subscribe to news letter
                 </label>
               </div>
-              <button type="submit">Submit</button>
-
-              <Control.reset model="user" type="reset">
-                Reset
-              </Control.reset>
+              <button type="submit" className="submitRegForm">
+                Submit
+              </button>
             </Form>
           </div>
         </div>

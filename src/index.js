@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore, applyMiddleware } from "redux";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { combineForms } from "react-redux-form";
 import App from "./App";
 
-const profileDetails = { firstName: "", email: "" };
+const profileDetails = {};
 const store = createStore(
   combineForms({
     user: profileDetails
@@ -14,7 +14,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />{" "}
+    <App />{" "}  
   </Provider>,
   document.getElementById("root")
 );

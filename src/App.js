@@ -2,11 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import RegisterForm from "./RegisterForm";
+import ViewUser from "./viewUser";
 
 const LandingPage = props => {
   const { history } = props;
   const handleRegisterClick = () => {
-    history.push("/register");
+    history.push("/user");
   };
   return (
     <div className="landingPage">
@@ -87,7 +88,8 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route exact path="/register" component={RegisterForm} />
+        <Route exact path="/user" component={RegisterForm} />
+        <Route exact path="/view-user" component={ViewUser} />
       </Switch>
     </Router>
   );

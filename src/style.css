@@ -108,3 +108,15 @@ textarea {
   padding: 0.5rem;
   min-width: 20rem; */
 }
+
+.rootRight-view {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: calc(100% - 50%);
+}
+
+.agreeButton {
+  margin-top: 30px;
+}
